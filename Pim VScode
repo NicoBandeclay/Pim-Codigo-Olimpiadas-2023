@@ -1,0 +1,202 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <fcntl.h>
+#include <io.h>
+#include <locale.h>
+
+
+
+int main() {
+    system("color 3e");
+    setlocale(LC_ALL,"Portuguese_Brazil");
+    menu();
+
+
+
+}
+
+
+
+
+
+void salvarAvaliacao(int nota, const char* tema) {
+    FILE *arquivo = fopen("dados.csv", "a");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+
+    fprintf(arquivo, "Tema: %s - Avaliação: %d\n", tema, nota);
+
+    fclose(arquivo);
+}
+
+void caso1() {
+    printf("Obra 1: Entre os dias 13 e 18 de fevereiro de 1922, aconteceu em São Paulo a semana que foi o marco do rompimento com o conservadorismo das artes no Brasil: a Semana de Arte Moderna (SAM). Artistas como Mário de Andrade, Oswald de Andrade, Anita Malfatti, Heitor Villa-Lobos e Di Cavalcanti foram grandes destaques do evento e tinham como objetivo seguir a linhagem futurista que surgiu na Europa após a Primeira Guerra Mundial. Além disso, os organizadores também pensaram em trazer uma arte que trouxesse, em maior peso, a essência da cultura brasileira.\n\n");
+
+    printf("Os operários’’(1933), de Tarsila do Amaral. Tarsila, seguindo as características modernistas iniciadas após o evento da semana da arte moderna, deseja denunciar e expor a industrialuzação brasileira, momento histórico marcado pela migração de trabvalhadores, classe ainda muito vuneravel e explorada, sem leis que a defendessem propriamente.\n");
+
+    printf("\n\n");
+
+    printf("Obra 2: A estudante”(1915-1916), de Anita Malfati. A pintora foi uma figura emblemática no evento, já que foi constantemente atacada pelo autor monteiro lobato, que a via como uma artista ‘’rebelde sem causa’’. Mas, contrariando as expectativas, ela foi responsável peloestopim da semana, com diversas obras aclamadas pela critica. Além disso, Malfatti tabém foi um marco relacionado ao feminismo, porque anteriormente ao seu legado, o mundo da arte era, em sua maioria, dominado por homens.\n");
+
+    printf("\n\n");
+
+    printf("Obra 3: A ventania”(1915), de Anita Malfatti. A composição A Ventania, da artista Anita Malfatti, é influenciada pelo trabalho do holandês Vicent Van Gogh por apresentar pinceladas de textura espessa, ressaltadas e rápidas. Nela, o vento é o elemento principal, ao dobrar tudo que a sua volta se encontra, com a sua força colossal, num turbilhão de formas e cores.\n\n");
+
+    int avaliacao;
+    printf("Dê uma nota de 0 a 10 sobre o tema: ");
+    scanf("%d", &avaliacao);
+
+    if (avaliacao >= 0 && avaliacao <= 10) {
+        salvarAvaliacao(avaliacao, "100 ANOS DA SEMANA DA ARTE MODERNA");
+    }
+    else {
+        printf("Nota inválida. A nota deve ser de 0 a 10.\n");
+    }
+}
+
+void caso2() {
+    printf("Inventor, visionário, uma personalidade histórica. No dia 20 de julho, há 150 anos, nascia o mineiro Alberto Santos Dumont, apontado como o precursor de uma das mais importantes criações da humanidade: o avião.\n\n");
+
+    printf ("Obra 1: Em Paris, multidão cerca o 14-Bis, invento mais famoso de Santos Dumont, com o qual o mineiro surpreendeu o mundo ao decolar de forma autônoma e voar por 60 metros.\n\n");
+
+    printf("Obra 2: Em 1909, ele voou em seu avião Demoiselle, um dos primeiros aeroplanos do mundo, e que se tornou um sucesso comercial. Santos Dumont também trabalhou em melhorias no design do avião, como a adição de cauda vertical para melhor estabilidade e controle.\n\n");
+
+    printf("Obra 3: Em 1901, Santos Dumont pilotou seu balão, o Número 6, que era movido a gasolina, sobre Paris, e ganhou um prêmio de 100 mil francos por seu feito. As suas realizações foram frutos de sucesso na imprensa europeia, na imprensa norte-americana e no Brasil. O inventor, nesse momento, torna-se o centro das atenções, despertando o interesse militar para seus balões.\n\n");
+
+    int avaliacao;
+    printf("Dê uma nota de 0 a 10 sobre o tema: ");
+    scanf("%d", &avaliacao);
+
+    if (avaliacao >= 0 && avaliacao <= 10) {
+        salvarAvaliacao(avaliacao, "150 ANOS DE SANTOS DUMONT");
+    }
+    else {
+        printf("Nota inválida. A nota deve ser de 0 a 10.\n");
+    }
+}
+
+void caso3() {
+    printf("A capital francesa foi a primeira cidade a anunciar que estava interessada em receber os Jogos Olímpicos de Verão de 2024, e anunciou a sua intenção em 23 de junho de 2015, a data em que é celebrado o Dia Olímpico. O ex-ministro francês, Jean-Francois Lamour, percebeu que 2024 seria um ano chave para encaixar com o centenário da última vez em que os Jogos foram realizados na cidade e também o centenário dos Jogos Olímpicos de Inverno franceses gostariam muito disso.\n\n");
+
+    printf("Obra 1: Torre Eiffel receberá o vôlei de praia das Olimpíadas\n\n");
+
+    printf("Obra 2: Construído para a Copa do Mundo de 1998, o Stade de France sediará as competições de atletismo e rugby sevens. O local tem capacidade para receber um público de até 75 mil pessoas. Um dos templos do tênis mundial, Roland Garros é outra instalação que será usada nas Olimpíadas de Paris. Além do tênis, a praça esportiva também receberá as competições de boxe.\n\n");
+
+    printf("Obra 3: Outro grande estádio a ser usado nos Jogos Olímpicos é o Parc des Princes, a casa do Paris Saint-Germain. É nele que serão realizadas as partidas de futebol. Já o ciclismo BMX freestyle, o skate, o breaking e e o basquete 3X3 acontecerão na Place de la Concorde, no extremo leste da avenida Champs-Élysées.\n\n");
+
+    int avaliacao;
+    printf("Dê uma nota de 0 a 10 sobre o tema: ");
+    scanf("%d", &avaliacao);
+
+    if (avaliacao >= 0 && avaliacao <= 10) {
+        salvarAvaliacao(avaliacao, "JOGOS OLIMPICOS DE PARIS 2024");
+    }
+    else {
+        printf("Nota inválida. A nota deve ser de 0 a 10.\n");
+    }
+}
+
+void caso4() {
+    printf("\"A inteligência artificial é um campo da ciência da computação que se dedica ao estudo e ao desenvolvimento de máquinas e programas computacionais capazes de reproduzir o comportamento humano na tomada de decisões e na realização de tarefas, desde as mais simples até as mais complexas.  É comumente referida pela sigla IA ou AI (em inglês, artificial intelligence).\n\n");
+
+    printf("Obra 1: Assistentes de voz: presentes em celulares e dispositivos como caixas de som inteligentes (smart speakers), os assistentes são um modelo de IA que reconhece e executa comandos feitos por meio da voz, como realizar ligações, programar alarmes, dar informações, tocar música e fazer pesquisas online. Os mais famosos assistentes de voz são o Google Assistente (integrado ao sistema Android); Siri, da Apple; e Alexa, da Amazon.\n\n");
+
+    printf("Obra 2: Reconhecimento facial: empregada na confirmação da identidade de uma pessoa ao acessar seus dispositivos pessoais, como smartphones, ou ainda em aplicativos financeiros, como os bancos virtuais. Mais recentemente, o reconhecimento facial tem sido aperfeiçoado para a sua adoção ampla em sistemas de segurança pública.\n\n");
+
+    printf("Obra 3: Atendimento ao cliente:  Os agentes virtuais on-line estão substituindo os agentes humanos na jornada do cliente. Respondem a perguntas frequentes (FAQs) sobre assuntos como envio, ou fornecem orientação personalizada, fazem vendas cruzadas de produtos ou oferecem sugestões de tamanhos para os usuários, mudando nossa forma de encarar o envolvimento do cliente em sites e plataformas de redes sociais. Alguns exemplos são bots de mensagens em sites de comércio eletrônico com agentes virtuais, aplicativos de mensagens, como o Slack e o Facebook Messenger e tarefas normalmente realizadas por assistentes virtuais e assistentes de voz.\n\n");
+    int avaliacao;
+    printf("Dê uma nota de 0 a 10 sobre o tema: ");
+    scanf("%d", &avaliacao);
+
+    if (avaliacao >= 0 && avaliacao <= 10) {
+        salvarAvaliacao(avaliacao, "INTELIGENCIA ARTIFICIAL");
+    }
+    else {
+        printf("Nota inválida. A nota deve ser de 0 a 10.\n");
+    }
+}
+
+void exibirOpcoes() {
+    printf("Menu (principal)\n");
+    printf("Escolha uma opção:\n");
+    printf("1 - 100 ANOS DA SEMANA DA ARTE MODERNA\n");
+    printf("2 - 150 ANOS DE SANTOS DUMONT\n");
+    printf("3 - JOGOS OLIMPICOS DE PARIS 2024\n");
+    printf("4 - INTELIGENCIA ARTIFICIAL\n");
+    printf("5 - Comprar ingresso.\n");
+}
+
+void menu() {
+    int opcao;
+
+    do {
+        exibirOpcoes();
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                caso1();
+                break;
+            case 2:
+                caso2();
+                break;
+            case 3:
+                caso3();
+                break;
+            case 4:
+                caso4();
+                break;
+            case 5:
+                printf("Tipo de ingresso (A para Inteira: 30,00, B para Meia: 15,00): ");
+                char tipoIngresso, formaPagamento;
+                scanf(" %c", &tipoIngresso);
+
+                printf("Forma de pagamento (C para Credito, P para Pix, D para Debito): ");
+                scanf(" %c", &formaPagamento);
+
+                if (formaPagamento == 'C' || formaPagamento == 'D') {
+                    char numeroCartao[16];
+                    printf("Insira os dados do cartão (16 dígitos): ");
+                    scanf("%s", numeroCartao);
+                } else if (formaPagamento == 'P') {
+                    printf("Leia o QRCode para efetuar o pagamento via Pix.\n");
+                break;
+                    printf("Obrigado pela compra! Aqui está seu ingresso!\n");
+                } else {
+                    printf("Forma de pagamento inválida.\n");
+                }
+
+
+            default:
+                printf("Obrigado pela compra! Aqui está o seu ingresso.\n");
+
+        float desconto = 0.1; // 10% de desconto
+
+void salvarAvaliacao(int nota, const char* tema) {
+    FILE *arquivo = fopen("avaliacoes.txt", "a");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+
+    // Calcula o valor após o desconto
+    float notaComDesconto = nota - (nota * desconto);
+
+    fprintf(arquivo, "Tema: %s - Avaliação: %.2f\n", tema, notaComDesconto);
+
+    fclose(arquivo);
+}
+
+        }
+    } while (opcao != 0);
+}
+
+
+
+
